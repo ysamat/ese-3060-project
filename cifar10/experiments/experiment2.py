@@ -450,15 +450,15 @@ def main(run):
         total_time_seconds += 1e-3 * starter.elapsed_time(ender)
 
         ####################
-        #    Evaluation    #
+        #     Evaluation   #
         ####################
 
-        # Save the accuracy and loss from the last training batch of the epoch
         train_acc = (outputs.detach().argmax(1) == labels).float().mean().item()
         train_loss = loss.item() / batch_size
         val_acc = evaluate(model, test_loader, tta_level=0)
         print_training_details(locals(), is_final_entry=False)
-        run = None # Only print the run number once
+        run = None
+
 
     ####################
     #  TTA Evaluation  #
