@@ -63,7 +63,6 @@ hyp = {
     },
 }
 
-scaler = torch.cuda.amp.GradScaler()
 
 #############################################
 #                DataLoader                 #
@@ -407,6 +406,8 @@ def main(run):
     ender.record()
     torch.cuda.synchronize()
     total_time_seconds += 1e-3 * starter.elapsed_time(ender)
+
+    scaler = torch.cuda.amp.GradScaler()
 
     for epoch in range(ceil(epochs)):
 
