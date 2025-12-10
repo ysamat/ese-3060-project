@@ -38,7 +38,7 @@ torch.backends.cudnn.benchmark = True
 
 hyp = {
     'opt': {
-        'train_epochs': 9.9,
+        'train_epochs': 6.0,
         'batch_size': 1024,
         'lr': 11.5,                 # learning rate per 1024 examples
         'momentum': 0.85,
